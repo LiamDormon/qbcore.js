@@ -57,15 +57,19 @@ export class Shared {
 }
 
 export class Config {
-  Player: {
-    MaxWeight: number;
-    BloodTypes: BloodTypes;
-    MaxInvSlots: number;
-    DefaultSpawn: Vector;
-    MaxPlayers: number;
-    Money: MoneyConfig;
-    Server: ServerConfig;
-  }
+  DefaultSpawn: Vector;
+  MaxPlayers: number;
+  Player: PlayerConfig;
+  Money: MoneyConfig;
+  Server: ServerConfig;
+}
+
+declare interface PlayerConfig {
+  MaxWeight: number;
+  BloodTypes: BloodTypes;
+  MaxInvSlots: number;
+  HungerRate: number;
+  ThirstRate: number;
 }
 
 declare interface ServerConfig {
