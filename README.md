@@ -19,7 +19,7 @@ If you experience any issues, please post them in the `Issues`.
 
 ### `Installation`
 
-Run `npm i esx.js` to install the package. When this is done you are ready to use it. 
+Run `npm i qbcore.js` to install the package. When this is done you are ready to use it. 
 
 ### `Usage`
 
@@ -55,3 +55,5 @@ import { Player } from 'qbcore.js/@types/server'
 
 const Player: Player
 ```
+
+### Contributions and Additions are always welcome!
