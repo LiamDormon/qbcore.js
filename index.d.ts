@@ -1,0 +1,51 @@
+import { ClientFunctions } from "./@types/client";
+import { Commands, Player, PlayerFunctions, ServerFunctions, UseableItem } from "./@types/server";
+import { Config, PlayerData, Shared } from "./common/common";
+// ================== CLIENT ================================
+// ==========================================================
+
+export class Client {
+  Shared: Shared
+  Functions: ClientFunctions
+  PlayerData: PlayerData
+  RequestId: number
+  Config: Config
+  ServerCallbacks: {
+    [key: string]: (...args: any[]) => void
+  }
+
+  /** 
+   * Prints a table in a formatted string in the server console 
+   */
+  Debug(resource, obj, depth): void
+}
+
+// ================== SERVER ================================
+// ==========================================================
+export class Server {
+  Shared: Shared
+  Players: Player[]
+  Commands: Commands
+  UseableItems: UseableItem[]
+  Config: Config
+  Functions: ServerFunctions
+  Player: PlayerFunctions
+  ServerCallbacks: {
+    [key: string]: (...args: any[]) => void
+  }
+
+  /** 
+   * Prints a table in a formatted string in the server console 
+   */
+  Debug(resource, obj, depth): void
+
+  /** 
+   * Prints a formatted error message in the server console with the resource it came from
+   */
+  ShowError(resource: string, msg: string): void
+
+  /** 
+   * Prints a formatted success log in the server console with the resource it came from 
+   */
+  ShowSuccess(resource: string, msg: string): void
+}
