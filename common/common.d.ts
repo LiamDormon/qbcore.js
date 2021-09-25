@@ -109,6 +109,7 @@ export declare interface Item {
   combinable?: ItemCombinable;
   description: string;
   info?: any;
+  amount?: any;
 }
 
 declare interface ItemCombinableAnim {
