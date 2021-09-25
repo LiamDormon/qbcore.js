@@ -1,6 +1,6 @@
 {
   "name": "qbcore.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Type definitions for QBCore Framework, based on esx.js by itschip",
   "main": "index.js",
   "repository": {
@@ -23,5 +23,5 @@
   "bugs": {
     "url": "https://github.com/mojito-fivem/qbcore/issues"
   },
-  "homepage": "https://github.com/mojito-fivem/qbcore#readme"
+  "homepage": "https://github.com/mojito-fivem/qbcore.js#readme"
 }
