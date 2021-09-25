@@ -21,9 +21,15 @@ export class Shared {
    */
   SplitStr(str: string, delimiter: string): string[]
 
-  Weapons: Weapon[]
-  Items: Item[]
-  Vehicles: Vehicle[]
+  Weapons: {
+    [key: number]: Weapon
+  }
+  Items: {
+    [key: string]: Item
+  }
+  Vehicles: {
+    [key: string]: Vehicle
+  }
   Gangs: {
     [key: string]: {
       label: string;
