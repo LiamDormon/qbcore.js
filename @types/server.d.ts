@@ -37,7 +37,12 @@ export class ServerFunctions {
   /** 
    * @returns Array of all logged in players, ignores players with 'logged-out' state 
    */
-  GetPlayers(): Player[]
+  GetPlayers(): number[]
+
+  /** 
+   * @returns Array of logged in player objects, ignores players with 'logged-out' state
+   */
+  GetQBPlayers(): Player[]
 
   /** 
    * Registers a new server callback, use QBCore.Functions.TriggerCallback on the client side to trigger the callback 
