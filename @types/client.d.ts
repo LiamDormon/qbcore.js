@@ -53,7 +53,7 @@ export class ClientFunctions {
       *  @param textype: type of notification to display
       *  @param length: amount of time to display for 
       */
-     Notify(text: string, textype: "success" | "primary" | "error", length: number): void
+     Notify(text: string | Notification, textype: string, length: number): void
    
      /** QBCore.Functions.TriggerCallback: Triggers a callback function 
       *  @param name: Name of the registered callback
@@ -204,4 +204,9 @@ export declare interface VehicleProperties {
   modTank: number;
   modWindows: number;
   modLivery: number;
+}
+
+declare interface Notification {
+  text: string;
+  caption: string;
 }
