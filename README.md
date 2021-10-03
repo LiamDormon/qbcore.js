@@ -32,7 +32,7 @@ First you need to import either the `Client` class or `Server` class.
 ```js
 import { Client } from 'qbcore.js'
 
-let QBCore: Client = exports['qb-core']:GetCoreObject()
+let QBCore: Client = exports['qb-core'].GetCoreObject()
 
 ```
 
@@ -40,7 +40,7 @@ let QBCore: Client = exports['qb-core']:GetCoreObject()
 ```js
 import { Server } from 'qbcore.js'
 
-let QBCore: Server = exports['qb-core']:GetCoreObject()
+let QBCore: Server = exports['qb-core'].GetCoreObject()
 ```
 
 ## You can also import a single type:
