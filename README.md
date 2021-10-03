@@ -32,11 +32,7 @@ First you need to import either the `Client` class or `Server` class.
 ```js
 import { Client } from 'qbcore.js'
 
-let QBCore: Client = null
-
-setImmediate (() => {
-  emit('QBCore:GetObject', (obj: Client) => (QBCore = obj));
-})
+let QBCore: Client = exports['qb-core']:GetCoreObject()
 
 ```
 
@@ -44,9 +40,7 @@ setImmediate (() => {
 ```js
 import { Server } from 'qbcore.js'
 
-let QBCore: Server = null
-
-emit('QBCore:GetObject', (obj: Server) => (QBCore = obj));
+let QBCore: Server = exports['qb-core']:GetCoreObject()
 ```
 
 ## You can also import a single type:
