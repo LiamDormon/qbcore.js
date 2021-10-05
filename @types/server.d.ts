@@ -47,17 +47,17 @@ export class ServerFunctions {
   /** 
    * Registers a new server callback, use QBCore.Functions.TriggerCallback on the client side to trigger the callback 
    */
-  CreateCallback(name: string, cb: Function): void
+  CreateCallback(name: string, cb: (source: number, cb: Function, args?: any) => void): void
 
   /** 
    * Triggers a server callback 
    */
-  TriggerCallback(name: string, source: number, cb: Function, args: any)
+  TriggerCallback(name: string, source: number, cb: Function, args?: any): void
 
   /** 
    * registers a callback function that will be triggered when a player uses the specified item 
    */
-  CreateUseableItem(item: string, cb: Function): void
+  CreateUseableItem(item: string, cb: (source: number, item: Item) => void): void
 
   /** 
    * @returns true if the specified item has a callback when used
@@ -266,13 +266,13 @@ export class SelfFunctions {
    * Optional slot param to specify a specific inventory slot to remove from
    * @returns true if the item was removed, false otherwise 
    */
-  RemoveItem(item: string, amount: number, slot?: number)
+  RemoveItem(item: string, amount: number, slot?: number): boolean
 
   /** 
    * Overwrites the player's inventory with the specified contents
    * Refreshes the player's commands if second argument is true
    */
-  SetInventory(items: Item[], dontUpdateChat: boolean)
+  SetInventory(items: Item[], dontUpdateChat: boolean): void
 
   /** 
    * Wipes the player's inventory 
@@ -331,7 +331,7 @@ export declare class Commands {
    * @param callback: Callback function to run when the command is executed, passes params source, args
    * @param permission: Permission level required to execute the command
    */
-  Add(name: string, help: string, arguments: CommandHelp[], argsrequire: boolean, callback: Function, permission: string): void
+  Add(name: string, help: string, arguments: CommandHelp[], argsrequire: boolean, callback: (source: number, args: any) => void, permission: string): void
 
   List: Command[]
 }
