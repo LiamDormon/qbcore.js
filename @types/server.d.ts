@@ -47,17 +47,17 @@ export class ServerFunctions {
   /** 
    * Registers a new server callback, use QBCore.Functions.TriggerCallback on the client side to trigger the callback 
    */
-  CreateCallback(name: string, cb: Function): void
+  CreateCallback(name: string, cb: (source: number, cb: Function, args?: any) => void): void
 
   /** 
    * Triggers a server callback 
    */
-  TriggerCallback(name: string, source: number, cb: Function, args: any): void
+  TriggerCallback(name: string, source: number, cb: Function, args?: any): void
 
   /** 
    * registers a callback function that will be triggered when a player uses the specified item 
    */
-  CreateUseableItem(item: string, cb: Function): void
+  CreateUseableItem(item: string, cb: (source: number, item: Item) => void): void
 
   /** 
    * @returns true if the specified item has a callback when used
