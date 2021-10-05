@@ -1,6 +1,6 @@
 {
   "name": "qbcore.js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Type definitions for QBCore Framework, based on esx.js by itschip",
   "main": "index.js",
   "repository": {
