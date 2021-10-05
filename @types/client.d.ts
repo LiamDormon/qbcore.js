@@ -60,7 +60,7 @@ export class ClientFunctions {
       *  @param cb: callback function
       *  @param args: optional - arguments to pass to the callback function
       */
-     TriggerCallback(name: string, cb: Function, args?: any): void
+     TriggerCallback(name: string, cb: Function, ...args: any[]): void
    
      /** QBCore.Functions.GetVehicles
       *  @returns array of entity handles for all vehicles within scope of the client
