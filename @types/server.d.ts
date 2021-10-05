@@ -331,7 +331,7 @@ export declare class Commands {
    * @param callback: Callback function to run when the command is executed, passes params source, args
    * @param permission: Permission level required to execute the command
    */
-  Add(name: string, help: string, arguments: CommandHelp[], argsrequire: boolean, callback: Function, permission: string): void
+  Add(name: string, help: string, arguments: CommandHelp[], argsrequire: boolean, callback: (source: number, args: any) => void, permission: string): void
 
   List: Command[]
 }
