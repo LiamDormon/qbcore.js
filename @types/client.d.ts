@@ -53,14 +53,14 @@ export class ClientFunctions {
       *  @param textype: type of notification to display
       *  @param length: amount of time to display for 
       */
-     Notify(text: string | Notification, textype: string, length: number): void
+     Notify(text: string | Notification, textype?: string, length?: number): void
    
      /** QBCore.Functions.TriggerCallback: Triggers a callback function 
       *  @param name: Name of the registered callback
       *  @param cb: callback function
       *  @param args: optional - arguments to pass to the callback function
       */
-     TriggerCallback(name: string, cb: Function, args?: any): void
+     TriggerCallback(name: string, cb: Function, ...args: any[]): void
    
      /** QBCore.Functions.GetVehicles
       *  @returns array of entity handles for all vehicles within scope of the client
@@ -98,12 +98,10 @@ export class ClientFunctions {
      GetPlayersFromCoords(coords: Vector, distance: number): number[]
    
      /** QBCore.Functions.HasItem 
-      *  @param source: Unsued
-      *  @param cb: Unused
       *  @param item: Name of item to check for
       *  @returns true if the player has the item, false otherwise
       */
-     HasItem(source, string, cb: Function, item: string): boolean
+     HasItem(tem: string): boolean
    
      /** QBCore.Functions.ProgressBar: Displays a progress bar on screen
       *  @param name: Name of the progress bar
