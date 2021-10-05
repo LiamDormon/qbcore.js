@@ -52,7 +52,7 @@ export class ServerFunctions {
   /** 
    * Triggers a server callback 
    */
-  TriggerCallback(name: string, source: number, cb: Function, args: any)
+  TriggerCallback(name: string, source: number, cb: Function, args: any): void
 
   /** 
    * registers a callback function that will be triggered when a player uses the specified item 
@@ -266,13 +266,13 @@ export class SelfFunctions {
    * Optional slot param to specify a specific inventory slot to remove from
    * @returns true if the item was removed, false otherwise 
    */
-  RemoveItem(item: string, amount: number, slot?: number)
+  RemoveItem(item: string, amount: number, slot?: number): boolean
 
   /** 
    * Overwrites the player's inventory with the specified contents
    * Refreshes the player's commands if second argument is true
    */
-  SetInventory(items: Item[], dontUpdateChat: boolean)
+  SetInventory(items: Item[], dontUpdateChat: boolean): void
 
   /** 
    * Wipes the player's inventory 
