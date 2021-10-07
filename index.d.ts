@@ -17,7 +17,7 @@ export class Client {
   /** 
    * Prints a table in a formatted string in the server console 
    */
-  Debug<T = unknown>(obj: T, indent?: number): void
+  Debug(obj: object | Array<unknown>, indent?: number): void
 }
 
 // ================== SERVER ================================
@@ -37,7 +37,7 @@ export class Server {
   /** 
    * Prints a table in a formatted string in the server console 
    */
-   Debug<T = unknown>(obj: T, indent?: number): void
+   Debug(obj: object | Array<unknown>, indent?: number): void
 
   /** 
    * Prints a formatted error message in the server console with the resource it came from
