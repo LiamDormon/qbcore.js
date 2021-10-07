@@ -76,19 +76,25 @@ export class ClientFunctions {
       *  @param coords: position vector to find the closest vehicle to, if not specified the player position will be used
       *  @returns tuple of [entity handle, distance]
       */
-     GetClosestVehicle(coords: Vector | null): [number, number]
+     GetClosestVehicle(coords?: Vector): [number, number]
    
      /** QBCore.Functions.GetClosestPed
       *  @param coords: position vector to find the closest ped to, if not specified the player position will be used
       *  @returns tuple of [entity handle, distance]
       */
-     GetClosestPed(coords: Vector | null): [number, number]
+     GetClosestPed(coords?: Vector): [number, number]
    
      /** QBCore.Functions.GetClosestPlayer
       *  @param coords: position vector to find the closest player ped to, if not specified the player position will be used
       *  @returns tuple of [entity handle, distance]
       */
-     GetClosestPlayer(coords: Vector | null): [number, number]
+     GetClosestPlayer(coords?: Vector): [number, number]
+     
+     /** QBCore.Functions.GetClosestObject
+      *  @param coords: position vector to find the closest object to, if not specified the player position will be used
+      *  @returns tuple of [entity handle, distance]
+      */
+     GetClosestObject(coords?: Vector): [number, number]
      
      /** QBCore.Functions.GetPlayersFromCoords
       *  @param coords: position vector to search for players within
