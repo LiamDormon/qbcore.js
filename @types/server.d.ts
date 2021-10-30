@@ -39,10 +39,12 @@ export class ServerFunctions {
    */
   GetPlayers(): number[]
 
-  /** 
-   * @returns Array of logged in player objects, ignores players with 'logged-out' state
+  /** If player with server id 1 is online and all other player IDs are in order without gaps, this object is serialised as an array
+   *  otherwise it will be serialised as an object where the key is the server ID and the value is the player object.
+   *  You **should** however treat this as an object.
+   * @returns Object or Array of players
    */
-  GetQBPlayers(): Player[]
+  GetQBPlayers(): PlayersObject | Player[]
 
   /** 
    * Registers a new server callback, use QBCore.Functions.TriggerCallback on the client side to trigger the callback 
@@ -80,7 +82,7 @@ export class ServerFunctions {
   IsWhitelisted(source: number): boolean
 
   /** 
-   * Sets the player's admin priviledges to the specified level, updates permission list and database 
+   * Sets the player's admin privileges to the specified level, updates permission list and database
    */
   AddPermission(source: number, permission: number): void
 
@@ -105,7 +107,7 @@ export class ServerFunctions {
   IsOptin(source: number): boolean
 
   /** Should be ToggleDuty but this function name is in dutch? 
-   *  If the player is an admin, it will toggle thier ON DUTY status
+   *  If the player is an admin, it will toggle their ON DUTY status
    */
   ToggleOptin(source: number): void
 
@@ -191,6 +193,10 @@ export class PlayerFunctions {
 export declare interface Player {
   PlayerData: PlayerData;
   Functions: SelfFunctions;
+}
+
+declare interface PlayersObject {
+  [key: number]: Player
 }
 
 // Functions that the player object can call on itself
