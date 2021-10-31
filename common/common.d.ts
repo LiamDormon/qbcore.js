@@ -21,6 +21,21 @@ export class Shared {
    */
   SplitStr(str: string, delimiter: string): string[]
 
+  /** 
+   * QBCore.Shared.Sign
+   * @param {number} num: number to get the sign of
+   * @returns {number} sign of the input: 1 represents +ve, -1 for -ve   
+   */
+  Sign(num: number): number
+
+  /** 
+   * QBCore.Shared.Round
+   * @param {number} num: number to be rounded
+   * @param {number} bracket: optional degree of accuracy for the number to be rounded to, rounds to nearest whole number if not specified
+   * @return {number} result of rounding
+   */
+  Round(num: number, bracket?: number): number
+
   Weapons: {
     [key: number]: Weapon
   }
