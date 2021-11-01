@@ -39,9 +39,9 @@ export class ClientFunctions {
       *  @param {number} model: model hash
       *  @param cb: callback function
       *  @param coords: position vector to spawn the vehicle
-      *  @param isnetwored: if true vehicle will be networked
+      *  @param isnetworked: if true vehicle will be networked
       */
-     SpawnVehicle(model: string, cb: Function, coords?: Vector, isnetwored?: boolean): void
+     SpawnVehicle(model: string, cb: Function, coords?: Vector, isnetworked?: boolean): void
    
      /** QBCore.Functions.DeleteVehicle: Deletes the specified vehicle 
       *  @param vehicle: vehicle entity handle
