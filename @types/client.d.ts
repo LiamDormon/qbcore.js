@@ -126,7 +126,7 @@ export class ClientFunctions {
      
      /** QBCore.Functions.GetPlate 
       *  @param vehicle: vehicle entity handle
-      *  @returns vehicle license plate or null if the vehicle handle is invalid
+      *  @returns vehicle license plate trimmed of tailing whitespaces or null if the vehicle handle is invalid
       */
      GetPlate(vehicle: number): string | null
 
