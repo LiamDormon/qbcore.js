@@ -123,7 +123,13 @@ export class ClientFunctions {
       *  @param onCancel: Callback function to be called when the progress bar is cancelled
       */
      Progressbar(name: string, label: string, duration: number, useWhileDead: boolean, canCancel: boolean, disableControls: any, animation: any, prop: any, propTwo: any, onFinish: Function, onCancel: Function): void
-   
+     
+     /** QBCore.Functions.GetPlate 
+      *  @param vehicle: vehicle entity handle
+      *  @returns vehicle license plate trimmed of tailing whitespaces or null if the vehicle handle is invalid
+      */
+     GetPlate(vehicle: number): string | null
+
      /** QBCore.Functions.GetVehicleProperties 
       *  @param vehicle: vehicle entity handle
       *  @returns vehicle properties object or null if the vehicle handle is invalid

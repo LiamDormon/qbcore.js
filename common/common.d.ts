@@ -36,6 +36,14 @@ export class Shared {
    */
   Round(num: number, bracket?: number): number
 
+  /** 
+   * QBCore.Shared.Trim
+   * It would however be easier to use the .trim() method of the string class in v8
+   * @param {string} str: string to be trimmed
+   * @returns {string}: trimmed string with whitespace removed 
+   */
+  Trim(str: string): string
+
   Weapons: {
     [key: number]: Weapon
   }

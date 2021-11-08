@@ -46,6 +46,18 @@ export class ServerFunctions {
    */
   GetQBPlayers(): PlayersObject | Player[]
 
+  /**  
+   *  @param {string} job: Job name to fetch on duty players for
+   *  @returns tuple of player id array and the number of players on duty with the specified job
+   */
+  GetPlayersOnDuty(job: string): [number[], number]
+
+  /** 
+   *  @param {string} job: Job name to fetch on duty players for
+   *  @returns count of players on duty for the specified job 
+   */
+  GetDutyCount(job: string): number
+
   /** 
    * Registers a new server callback, use QBCore.Functions.TriggerCallback on the client side to trigger the callback 
    */
