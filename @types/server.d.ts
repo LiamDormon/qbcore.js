@@ -238,7 +238,7 @@ export class SelfFunctions {
   /** 
    * Sets the specified metadata key to the specified value 
    */
-  SetMetaData(meta: string, value: string): void
+  SetMetaData(meta: string, value: any): void
 
   /** 
    * Increase the player's job reputation by given amount 

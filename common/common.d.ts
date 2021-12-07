@@ -174,6 +174,10 @@ declare interface Money {
   [key: string]: number;
 }
 
+declare interface MetaData {
+  [key: string]: any;
+}
+
 export declare interface PlayerData {
   position: Vector;
   source: number;
@@ -188,6 +192,7 @@ export declare interface PlayerData {
   license: string;
   items: Item[];
   inventory: string; // Appears to be JSON serialised version of items
+  metadata: MetaData
 }
 
 export declare interface CharacterInfo {
