@@ -58,6 +58,52 @@ export class ServerFunctions {
    */
   GetDutyCount(job: string): number
 
+  /**
+   * QBCore.Functions.GetBucketObjects
+   * @returns Routing Bucket objects for players and entities
+   */
+  GetBucketObjects(): [PlayerBucketObj, EntityBucketObj]
+
+  /**
+   * QBCore.Functions.SetPlayerBucket
+   * Adds the player to specified routing bucket
+   * @param player_source 
+   * @param bucket
+   * @returns true if successful
+   */
+  SetPlayerBucket(player_source: number, bucket: number): boolean
+
+  /**
+   * QBCore.Functions.SetPlayerBucket
+   * Adds the entity to specified routing bucket
+   * @param entity 
+   * @param bucket
+   * @returns true if successful
+   */
+  SetEntityBucket(entity: number, bucket: number): boolean
+
+  /**
+   * QBCore.Functions.GetPlayersInBucket
+   * @param bucket Routing bucket number
+   * @returns array of all player ids in the bucket
+   */
+  GetPlayersInBucket(bucket: number): number[]
+
+  /**
+   * QBCore.Functions.GetEntitiesInBucket
+   * @param bucket Routing bucket number
+   * @returns array of all entity handles in the bucket or false if it is empty
+   */
+  GetEntitiesInBucket(bucket: number): number[] | false
+
+  /**
+   * QBCore.Functions.IsPlayerInBucket
+   * @param player_source 
+   * @param bucket 
+   * @returns true if the player is in the specified bucket
+   */
+  IsPlayerInBucket(player_source: number, bucket: number): boolean
+
   /** 
    * Registers a new server callback, use QBCore.Functions.TriggerCallback on the client side to trigger the callback 
    */
@@ -372,4 +418,21 @@ declare interface CommandHelp {
 
 export declare interface UseableItem {
   [key: string]: Function
+}
+
+export declare interface PlayerBucket {
+  player_id: number;
+  player_bucket: number;
+}
+
+export declare interface PlayerBucketObj {
+  [key: string]: PlayerBucket
+}
+export declare interface EntityBucket {
+  entity_id: number;
+  entity_bucket: number;
+}
+
+export declare interface EntityBucketObj {
+  [key: number]: EntityBucket
 }
