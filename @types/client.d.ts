@@ -75,9 +75,10 @@ export class ClientFunctions {
      GetVehicles(): number[]
    
      /** QBCore.Functions.GetPeds 
+      *  @param ignoreList Optional array of entity handles which will be ignored
       *  @returns array of entity handles for all peds within scope of the client that aren't on the ignore list
       */
-     GetPeds(): number[]
+     GetPeds(ignoreList?: number[]): number[]
    
      /** QBCore.Functions.GetClosestVehicle
       *  @param coords: position vector to find the closest vehicle to, if not specified the player position will be used
@@ -87,9 +88,10 @@ export class ClientFunctions {
    
      /** QBCore.Functions.GetClosestPed
       *  @param coords: position vector to find the closest ped to, if not specified the player position will be used
+      *  @param ignoreList: optional array of entities that will not be included in the search
       *  @returns tuple of [entity handle, distance]
       */
-     GetClosestPed(coords?: Vector): [number, number]
+     GetClosestPed(coords?: Vector, ignoreList?: number[]): [number, number]
    
      /** QBCore.Functions.GetClosestPlayer
       *  @param coords: position vector to find the closest player ped to, if not specified the player position will be used
