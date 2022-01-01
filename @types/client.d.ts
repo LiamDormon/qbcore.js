@@ -28,7 +28,14 @@ export class ClientFunctions {
       * @param text: text to draw
       */
      DrawText3D(x: number, y: number, z: number, text: string): void
-   
+
+     /**
+      * QBCore.Functions.RequestAnimDict
+      * requests an animation dictonary and waits for it to load
+      * @param {string} animDict animation dictonary to load 
+      */
+     RequestAnimDict(animDict: string): void
+
      /** QBCore.Functions.GetCoords
       *  @param {number} entity: Entity handle
       *  @returns Vector of entity position in the world
@@ -95,6 +102,23 @@ export class ClientFunctions {
       *  @returns tuple of [entity handle, distance]
       */
      GetClosestObject(coords?: Vector): [number, number]
+
+     /**
+      * QBCore.Functions.GetClosestBone
+      * @param entity entity handle 
+      * @param list array of bone indexes
+      * @returns boneIndex, coords, distance 
+      */
+     GetClosestBone(entity: number, list: number[]): [number, Vector, number]
+
+     /**
+      * QBCore.Functions.GetBoneDistance
+      * @param entity entity handle 
+      * @param Type takes a value of '1' to return the bone index from a bone id, any other value and it will get the bone index from the bone name
+      * @param Bone if Type is 1 then Bone is the boneId otherwise Bone is the name of the bone
+      * @returns distance to the bone
+      */
+     GetBoneDistance(entity: number, Type: number, Bone: number | string): number
      
      /** QBCore.Functions.GetPlayersFromCoords
       *  @param coords: position vector to search for players within
