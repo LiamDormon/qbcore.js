@@ -156,6 +156,14 @@ export class ClientFunctions {
       */
      GetPlate(vehicle: number): string | null
 
+     /**
+      * QBCore.Functions.SpawnClear:
+      * Checks if an area is clear of obstructions within a given area
+      * @param coords 
+      * @param radius 
+      */
+     SpawnClear(coords: Vector, radius: number): boolean
+
      /** QBCore.Functions.GetVehicleProperties 
       *  @param vehicle: vehicle entity handle
       *  @returns vehicle properties object or null if the vehicle handle is invalid
