@@ -29,6 +29,18 @@ export class ClientFunctions {
       */
      DrawText3D(x: number, y: number, z: number, text: string): void
 
+    /**
+     * QBCore.Functions.CreateBlip: Used to create a map blip and apply provided properties
+     * @param coords coordinates of blip
+     * @param sprite sprite number (see https://docs.fivem.net/docs/game-references/blips/)
+     * @param display display type (see https://docs.fivem.net/natives/?_0x9029B2F3DA924928)
+     * @param scale size of the blip
+     * @param colour blip colour (see https://docs.fivem.net/docs/game-references/blips/)
+     * @param shortRange if false the blip is always show on the minimap, if true blip is only rendered to the minimap when close
+     * @param name name of the blip
+     */
+     CreateBlip(coords: Vector, sprite:number, display: number, scale: number, colour: number, shortRange: boolean, name: string): void
+
      /**
       * QBCore.Functions.RequestAnimDict
       * requests an animation dictonary and waits for it to load
