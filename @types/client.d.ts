@@ -28,7 +28,26 @@ export class ClientFunctions {
       * @param text: text to draw
       */
      DrawText3D(x: number, y: number, z: number, text: string): void
-   
+
+    /**
+     * QBCore.Functions.CreateBlip: Used to create a map blip and apply provided properties
+     * @param coords coordinates of blip
+     * @param sprite sprite number (see https://docs.fivem.net/docs/game-references/blips/)
+     * @param display display type (see https://docs.fivem.net/natives/?_0x9029B2F3DA924928)
+     * @param scale size of the blip
+     * @param colour blip colour (see https://docs.fivem.net/docs/game-references/blips/)
+     * @param shortRange if false the blip is always show on the minimap, if true blip is only rendered to the minimap when close
+     * @param name name of the blip
+     */
+     CreateBlip(coords: Vector, sprite:number, display: number, scale: number, colour: number, shortRange: boolean, name: string): void
+
+     /**
+      * QBCore.Functions.RequestAnimDict
+      * requests an animation dictonary and waits for it to load
+      * @param {string} animDict animation dictonary to load 
+      */
+     RequestAnimDict(animDict: string): void
+
      /** QBCore.Functions.GetCoords
       *  @param {number} entity: Entity handle
       *  @returns Vector of entity position in the world
@@ -68,9 +87,10 @@ export class ClientFunctions {
      GetVehicles(): number[]
    
      /** QBCore.Functions.GetPeds 
+      *  @param ignoreList Optional array of entity handles which will be ignored
       *  @returns array of entity handles for all peds within scope of the client that aren't on the ignore list
       */
-     GetPeds(): number[]
+     GetPeds(ignoreList?: number[]): number[]
    
      /** QBCore.Functions.GetClosestVehicle
       *  @param coords: position vector to find the closest vehicle to, if not specified the player position will be used
@@ -80,9 +100,10 @@ export class ClientFunctions {
    
      /** QBCore.Functions.GetClosestPed
       *  @param coords: position vector to find the closest ped to, if not specified the player position will be used
+      *  @param ignoreList: optional array of entities that will not be included in the search
       *  @returns tuple of [entity handle, distance]
       */
-     GetClosestPed(coords?: Vector): [number, number]
+     GetClosestPed(coords?: Vector, ignoreList?: number[]): [number, number]
    
      /** QBCore.Functions.GetClosestPlayer
       *  @param coords: position vector to find the closest player ped to, if not specified the player position will be used
@@ -95,6 +116,23 @@ export class ClientFunctions {
       *  @returns tuple of [entity handle, distance]
       */
      GetClosestObject(coords?: Vector): [number, number]
+
+     /**
+      * QBCore.Functions.GetClosestBone
+      * @param entity entity handle 
+      * @param list array of bone indexes
+      * @returns boneIndex, coords, distance 
+      */
+     GetClosestBone(entity: number, list: number[]): [number, Vector, number]
+
+     /**
+      * QBCore.Functions.GetBoneDistance
+      * @param entity entity handle 
+      * @param Type takes a value of '1' to return the bone index from a bone id, any other value and it will get the bone index from the bone name
+      * @param Bone if Type is 1 then Bone is the boneId otherwise Bone is the name of the bone
+      * @returns distance to the bone
+      */
+     GetBoneDistance(entity: number, Type: number, Bone: number | string): number
      
      /** QBCore.Functions.GetPlayersFromCoords
       *  @param coords: position vector to search for players within
@@ -129,6 +167,14 @@ export class ClientFunctions {
       *  @returns vehicle license plate trimmed of tailing whitespaces or null if the vehicle handle is invalid
       */
      GetPlate(vehicle: number): string | null
+
+     /**
+      * QBCore.Functions.SpawnClear:
+      * Checks if an area is clear of obstructions within a given area
+      * @param coords 
+      * @param radius 
+      */
+     SpawnClear(coords: Vector, radius: number): boolean
 
      /** QBCore.Functions.GetVehicleProperties 
       *  @param vehicle: vehicle entity handle

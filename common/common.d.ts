@@ -30,12 +30,28 @@ export class Shared {
   Round(num: number, decimal_places?: number): number
 
   /** 
-   * QBCore.Shared.Trim
+   * QBCore.Shared.Trim:
    * It would however be easier to use the .trim() method of the string class in v8
    * @param {string} str: string to be trimmed
    * @returns {string}: trimmed string with whitespace removed 
    */
   Trim(str: string): string
+
+  /**
+   * QBCore.Shared.ChangeVehicleExtra
+   * @param vehicle Entity Handle
+   * @param extra Vehicle Extra ID
+   * @param enable Toggle on / off
+   */
+  ChangeVehicleExtra(vehicle: number, extra: number, enable: boolean)
+
+  /**
+   * QBCore.Shared.SetDefaultVehicleExtras:
+   * Applies vehicle extras to a list
+   * @param vehicle Entity Handle
+   * @param config Object with the key as the extra id and value as the state
+   */
+  SetDefaultVehicleExtras(vehicle: number, config: {[key: number]: boolean})
 
   Weapons: {
     [key: number]: Weapon
