@@ -1,4 +1,4 @@
-import { Item, PlayerData, Vector } from "../common/common";
+import { Item, PlayerData, Vector } from "../common";
 
 export class ServerFunctions {
   /** 
