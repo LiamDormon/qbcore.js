@@ -1,6 +1,11 @@
 import { ClientFunctions } from "./@types/client";
 import { Commands, Player, PlayerFunctions, ServerFunctions, UseableItem } from "./@types/server";
-import { Config, PlayerData, Shared } from "./common/common";
+import { Config, PlayerData, Shared } from "./common";
+
+export * from './common'
+export * from './@types/client'
+export * from './@types/server'
+
 // ================== CLIENT ================================
 // ==========================================================
 
