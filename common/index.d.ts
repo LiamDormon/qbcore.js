@@ -43,7 +43,7 @@ export class Shared {
    * @param extra Vehicle Extra ID
    * @param enable Toggle on / off
    */
-  ChangeVehicleExtra(vehicle: number, extra: number, enable: boolean)
+  ChangeVehicleExtra(vehicle: number, extra: number, enable: boolean): void
 
   /**
    * QBCore.Shared.SetDefaultVehicleExtras:
@@ -51,7 +51,7 @@ export class Shared {
    * @param vehicle Entity Handle
    * @param config Object with the key as the extra id and value as the state
    */
-  SetDefaultVehicleExtras(vehicle: number, config: {[key: number]: boolean})
+  SetDefaultVehicleExtras(vehicle: number, config: {[key: number]: boolean}): void
 
   Weapons: {
     [key: number]: Weapon

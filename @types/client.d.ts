@@ -1,4 +1,4 @@
-import { PlayerData, Vector } from "../common/common";
+import { PlayerData, Vector } from "../common";
 
 export class ClientFunctions {
     /** QBCore.Functions.GetPlayerData()
