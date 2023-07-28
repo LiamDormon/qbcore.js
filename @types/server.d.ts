@@ -132,7 +132,7 @@ export class ServerFunctions {
   /** 
    * Used internally on connection, use DropPlayer instead 
    */
-  Kick(source: number, reason: string, setKickReason: Function, deferrals: any): void
+  Kick(source: number, reason: string, setKickReason: (reason: string) => void, deferrals: any): void
 
   /** Only use when QBCore.Config.Whitelist is set to true
    * @returns true if the player is whitelisted 
@@ -407,7 +407,7 @@ declare interface Command {
     name: string,
     help: string,
     argsrequired: boolean,
-    callback: Function
+    callback: (source: number, args: Record<string, string>, rawCommand: string) => void
   }
 }
 
@@ -417,7 +417,7 @@ declare interface CommandHelp {
 }
 
 export declare interface UseableItem {
-  [key: string]: Function
+  [key: string]: (source: number, item: Item) => void
 }
 
 export declare interface PlayerBucket {
