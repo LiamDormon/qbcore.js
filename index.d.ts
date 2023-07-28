@@ -16,7 +16,7 @@ export class Client {
   RequestId: number
   Config: Config
   ServerCallbacks: {
-    [key: string]: (...args: any[]) => void
+    [key: string]: (...args: unknown[]) => void
   }
 
   /** 
@@ -36,7 +36,7 @@ export class Server {
   Functions: ServerFunctions
   Player: PlayerFunctions
   ServerCallbacks: {
-    [key: string]: (...args: any[]) => void
+    [key: string]: (...args: unknown[]) => void
   }
 
   /** 

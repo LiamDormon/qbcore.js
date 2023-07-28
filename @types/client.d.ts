@@ -160,7 +160,7 @@ export class ClientFunctions {
       *  @param onFinish: Callback function to be called when the progress bar finishes successfully
       *  @param onCancel: Callback function to be called when the progress bar is cancelled
       */
-     Progressbar(name: string, label: string, duration: number, useWhileDead: boolean, canCancel: boolean, disableControls: any, animation: any, prop: any, propTwo: any, onFinish: () => void, onCancel: () => void): void
+     Progressbar(name: string, label: string, duration: number, useWhileDead: boolean, canCancel: boolean, disableControls: {disableMovement: boolean, disableCarMovement: boolean, disableMouse: boolean, disableCombat: boolean}, animation: {animDict?: string, anim?: string, flags?: number, task?: number}, prop: {model?: string, bone?: number, coords?: { x: number, y: number, z: number }, rotation?: { x: number, y: number, z: number }}, propTwo: {model?: string, bone?: number, coords?: { x: number, y: number, z: number }, rotation?: { x: number, y: number, z: number }}, onFinish: () => void, onCancel: () => void): void
      
      /** QBCore.Functions.GetPlate 
       *  @param vehicle: vehicle entity handle
