@@ -140,8 +140,9 @@ export declare interface Item {
   shouldClose: boolean;
   combinable?: ItemCombinable;
   description: string;
-  info?: unknown;
-  amount?: number;
+  slot: number;
+  info?: Record<string, any>;
+  amount: number;
 }
 
 declare interface ItemCombinableAnim {
