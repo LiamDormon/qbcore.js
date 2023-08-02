@@ -1,5 +1,0 @@
-{
-    "entryPoints": ["./index.d.ts"],
-    "readme": "none",
-    "out": "docs"
-}

@@ -1,11 +1,11 @@
 {
-  "name": "qbcore.js",
-  "version": "1.5.1",
+  "name": "@zerio2/qbcore.js",
+  "version": "1.5.4",
   "description": "Type definitions for QBCore Framework, based on esx.js by itschip",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mojito-fivem/qbcore.js.git"
+    "url": "git+https://github.com/Z3rio/qbcore.js.git"
   },
   "keywords": [
     "fivem",
@@ -18,18 +18,15 @@
     "citizenfx",
     "typescript"
   ],
-  "author": "Liam Dormon (Mojito-Fivem)",
+  "author": "Liam Dormon (Mojito-Fivem), modified by Z3rio",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mojito-fivem/qbcore/issues"
+    "url": "https://github.com/Z3rio/qbcore/issues"
   },
-  "homepage": "https://github.com/mojito-fivem/qbcore.js#readme",
+  "homepage": "https://github.com/Z3rio/qbcore.js#readme",
   "devDependencies": {
     "typedoc": "^0.22.11",
     "typescript": "^4.5.5"
   },
-  "scripts": {
-    "typedoc": "typedoc",
-    "docs": "npm run typedoc -- --options typedoc.json"
-  }
+  "scripts": {}
 }

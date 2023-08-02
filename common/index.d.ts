@@ -114,7 +114,7 @@ declare interface ServerConfig {
   uptime: number;
   whitelist: boolean;
   closed: boolean;
-  PermissionList: any;
+  PermissionList: unknown;
   closedReason: string;
   discord: string;
 }
@@ -140,8 +140,9 @@ export declare interface Item {
   shouldClose: boolean;
   combinable?: ItemCombinable;
   description: string;
-  info?: any;
-  amount?: any;
+  slot: number;
+  info?: Record<string, any>;
+  amount: number;
 }
 
 declare interface ItemCombinableAnim {
@@ -191,7 +192,7 @@ declare interface Money {
 }
 
 declare interface MetaData {
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export declare interface PlayerData {

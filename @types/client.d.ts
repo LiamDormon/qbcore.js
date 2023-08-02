@@ -5,7 +5,7 @@ export class ClientFunctions {
    *  @param cb: Optional callback function with PlayerData as the argument
    *  @returns returns PlayerData object if callback is not provided 
    */
-     GetPlayerData(cb?: Function): PlayerData
+     GetPlayerData(cb?: () => PlayerData): PlayerData
 
      /** QBCore.Functions.DrawText: Draws 2D Text on the screen at given position
       * @param x: x coordinate
@@ -60,7 +60,7 @@ export class ClientFunctions {
       *  @param coords: position vector to spawn the vehicle
       *  @param isnetworked: if true vehicle will be networked
       */
-     SpawnVehicle(model: string, cb: Function, coords?: Vector, isnetworked?: boolean): void
+     SpawnVehicle(model: string, cb: () => number, coords?: Vector, isnetworked?: boolean): void
    
      /** QBCore.Functions.DeleteVehicle: Deletes the specified vehicle 
       *  @param vehicle: vehicle entity handle
@@ -79,7 +79,7 @@ export class ClientFunctions {
       *  @param cb: callback function
       *  @param args: optional - arguments to pass to the callback function
       */
-     TriggerCallback(name: string, cb: Function, ...args: any[]): void
+     TriggerCallback(name: string, cb: (...args: any[]) => void, ...args: unknown[]): void
    
      /** QBCore.Functions.GetVehicles
       *  @returns array of entity handles for all vehicles within scope of the client
@@ -160,7 +160,7 @@ export class ClientFunctions {
       *  @param onFinish: Callback function to be called when the progress bar finishes successfully
       *  @param onCancel: Callback function to be called when the progress bar is cancelled
       */
-     Progressbar(name: string, label: string, duration: number, useWhileDead: boolean, canCancel: boolean, disableControls: any, animation: any, prop: any, propTwo: any, onFinish: Function, onCancel: Function): void
+     Progressbar(name: string, label: string, duration: number, useWhileDead: boolean, canCancel: boolean, disableControls: {disableMovement: boolean, disableCarMovement: boolean, disableMouse: boolean, disableCombat: boolean}, animation: {animDict?: string, anim?: string, flags?: number, task?: number}, prop: {model?: string, bone?: number, coords?: { x: number, y: number, z: number }, rotation?: { x: number, y: number, z: number }}, propTwo: {model?: string, bone?: number, coords?: { x: number, y: number, z: number }, rotation?: { x: number, y: number, z: number }}, onFinish: () => void, onCancel: () => void): void
      
      /** QBCore.Functions.GetPlate 
       *  @param vehicle: vehicle entity handle

@@ -107,12 +107,12 @@ export class ServerFunctions {
   /** 
    * Registers a new server callback, use QBCore.Functions.TriggerCallback on the client side to trigger the callback 
    */
-  CreateCallback(name: string, cb: (source: number, cb: Function, ...args: any[]) => void): void
+  CreateCallback(name: string, cb: (source: number, cb: (...args: any[]) => void, ...args: unknown[]) => void): void
 
   /** 
    * Triggers a server callback 
    */
-  TriggerCallback(name: string, source: number, cb: Function, ...args: any[]): void
+  TriggerCallback(name: string, source: number, cb: (...args: any[]) => void, ...args: unknown[]): void
 
   /** 
    * registers a callback function that will be triggered when a player uses the specified item 
@@ -132,7 +132,7 @@ export class ServerFunctions {
   /** 
    * Used internally on connection, use DropPlayer instead 
    */
-  Kick(source: number, reason: string, setKickReason: Function, deferrals: any): void
+  Kick(source: number, reason: string, setKickReason: (reason: string) => void, deferrals: unknown): void
 
   /** Only use when QBCore.Config.Whitelist is set to true
    * @returns true if the player is whitelisted 
@@ -284,7 +284,7 @@ export class SelfFunctions {
   /** 
    * Sets the specified metadata key to the specified value 
    */
-  SetMetaData(meta: string, value: any): void
+  SetMetaData(meta: string, value: unknown): void
 
   /** 
    * Increase the player's job reputation by given amount 
@@ -323,7 +323,7 @@ export class SelfFunctions {
    *  Optional info param to add metadata to the item
    *  @returns true if the item was added, false otherwise
    */
-  AddItem(item: string, amount: number, slot?: number, info?: any): boolean
+  AddItem(item: string, amount: number, slot?: number, info?: unknown): boolean
 
   /** 
    * Removes a specified amount of a specified item from the player's inventory
@@ -395,7 +395,7 @@ export declare class Commands {
    * @param callback: Callback function to run when the command is executed, passes params source, args
    * @param permission: Permission level required to execute the command
    */
-  Add(name: string, help: string, arguments: CommandHelp[], argsrequire: boolean, callback: (source: number, args: any) => void, permission: string): void
+  Add(name: string, help: string, arguments: CommandHelp[], argsrequire: boolean, callback: (source: number, args: string[]) => void, permission: string): void
 
   List: Command[]
 }
@@ -407,7 +407,7 @@ declare interface Command {
     name: string,
     help: string,
     argsrequired: boolean,
-    callback: Function
+    callback: (source: number, args: Record<string, string>, rawCommand: string) => void
   }
 }
 
@@ -417,7 +417,7 @@ declare interface CommandHelp {
 }
 
 export declare interface UseableItem {
-  [key: string]: Function
+  [key: string]: (source: number, item: Item) => void
 }
 
 export declare interface PlayerBucket {
